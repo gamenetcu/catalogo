@@ -1,23 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Biblioteca de Juegos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Mi Biblioteca de Juegos</h1>
+
+<input type="text" id="buscador" placeholder="Buscar juego...">
+
+<div id="lista" class="grid"></div>
+
 <script>
 let juegosGlobal = [];
 
 fetch("games.json")
-  .then(res => {
-    console.log("Status:", res.status); // debe ser 200
-    return res.json();
-  })
+  .then(res => res.json())
   .then(data => {
-    console.log("DATA:", data); // mira cómo se ve el JSON en la consola
     juegosGlobal = data;
-
-    if (data.length === 0) {
-      document.getElementById("lista").innerHTML = "JSON vacío";
-    } else {
-      document.getElementById("lista").innerHTML = "JSON cargado correctamente: " + data.length + " juegos";
-    }
-  })
-  .catch(error => {
-    console.error("ERROR:", error);
-    document.getElementById("lista").innerHTML = "Error cargando JSON";
+    renderizar(data);
   });
+
+function renderizar(data) {
+  const contenedor = document.getElementById("lista");
+  contenedor.innerHTML = "";
+
+  data.forEach(juego => {
+    contenedor.innerHTML += `
+      <div class="card">
+        <h3>${juego.Nombre}</h3>
+        <p>${juego.Descripción.substring(0, 150)}...</p>
+        <p><strong>${juego["Tamaño (GB)"]} GB</strong></p>
+        <p>Año: ${juego.Año}</p>
+      </div>
+    `;
+  });
+}
+
+document.getElementById("buscador").addEventListener("input", e => {
+  const texto = e.target.value.toLowerCase();
+  const filtrado = juegosGlobal.filter(j =>
+    j.Nombre.toLowerCase().includes(texto)
+  );
+  renderizar(filtrado);
+});
 </script>
+
+</body>
+</html>
