@@ -1,53 +1,2131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Biblioteca de Juegos</title>
-<link rel="stylesheet" href="style.css">
+    <title>My Game Collection</title>
+    <style>
+        body { font-family: sans-serif; background-color: #1a1a1a; color: white; display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .game-card { width: 200px; margin: 15px; background: #2a2a2a; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5); transition: transform 0.2s; }
+        .game-card:hover { transform: scale(1.05); }
+        .game-card img { width: 100%; height: 280px; object-fit: cover; }
+        .game-card .title { padding: 10px 10px 0 10px; text-align: center; font-size: 14px; font-weight: bold; }
+        .game-card .source { padding: 0 10px 10px 10px; text-align: center; font-size: 12px; color: #aaa; }
+    </style>
 </head>
 <body>
-
-<h1>Mi Biblioteca de Juegos</h1>
-
-<input type="text" id="buscador" placeholder="Buscar juego...">
-
-<div id="lista" class="grid"></div>
-
-<script>
-let juegosGlobal = [];
-
-fetch("games.json")
-  .then(res => res.json())
-  .then(data => {
-    juegosGlobal = data;
-    renderizar(data);
-  });
-
-function renderizar(data) {
-  const contenedor = document.getElementById("lista");
-  contenedor.innerHTML = "";
-
-  data.forEach(juego => {
-    contenedor.innerHTML += `
-      <div class="card">
-        <h3>${juego.Nombre}</h3>
-        <p>${juego.Descripción.substring(0, 150)}...</p>
-        <p><strong>${juego["Tamaño (GB)"]} GB</strong></p>
-        <p>Año: ${juego.Año}</p>
-      </div>
-    `;
-  });
-}
-
-document.getElementById("buscador").addEventListener("input", e => {
-  const texto = e.target.value.toLowerCase();
-  const filtrado = juegosGlobal.filter(j =>
-    j.Nombre.toLowerCase().includes(texto)
-  );
-  renderizar(filtrado);
-});
-</script>
-
+    <div class="game-card">
+        <img src="images/e494d228-2d43-408a-8fdf-2c691012dfe9.jpg" alt="007: Quantum of Solace">
+        <div class="title">007: Quantum of Solace</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ac79202b-c2a3-4fd8-8607-c606143a8362.jpg" alt="112 Operator">
+        <div class="title">112 Operator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4d89c491-45bb-497b-86ff-939a4c3f3e20.jpg" alt="7 Days to Die">
+        <div class="title">7 Days to Die</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/6a721201-03bc-4148-9d09-d9f4a54d4e88.jpg" alt="911 Operator Single City Run">
+        <div class="title">911 Operator Single City Run</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fbac59ee-903a-497a-a7c0-89a7da41ddb9.jpg" alt="A Game of Thrones: Genesis">
+        <div class="title">A Game of Thrones: Genesis</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bf012513-9fd0-4e1d-9255-5514ba89b079.jpg" alt="A Plague Tale: Innocence">
+        <div class="title">A Plague Tale: Innocence</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/da8d9bdc-849f-44d7-abb0-35876fcca3aa.jpg" alt="A Plague Tale: Requiem">
+        <div class="title">A Plague Tale: Requiem</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1d5d6e13-0b60-4910-894d-608db3899576.jpg" alt="Ace Combat 7: Skies Unknown">
+        <div class="title">Ace Combat 7: Skies Unknown</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5701ce49-48bf-494d-bd6c-2b1b24800413.jpg" alt="Adr1ft">
+        <div class="title">Adr1ft</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f27f87a5-10cd-4d31-934e-b55fd069ae2f.jpg" alt="Age of Empires: Definitive Edition">
+        <div class="title">Age of Empires: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/650d4627-f520-4aad-95c6-a14a8b6418ff.jpg" alt="Agenda">
+        <div class="title">Agenda</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b20fc414-288b-4cd4-bcd2-8ad7b55b1439.jpg" alt="Aircraft Carrier Survival">
+        <div class="title">Aircraft Carrier Survival</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/933e0d5f-3bb3-4871-a833-50a1721c00b7.jpg" alt="Airport CEO">
+        <div class="title">Airport CEO</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3d2d755d-6d2a-4eac-96a3-0836389277c0.jpg" alt="Airport Firefighters: The Simulation">
+        <div class="title">Airport Firefighters: The Simulation</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/49bd771b-a35b-43cc-bc97-ad897fe9b897.jpg" alt="Airport Simulator 2019">
+        <div class="title">Airport Simulator 2019</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/37c7aab0-4daa-41a6-9b54-a977ce5f1404.jpg" alt="AirportSim">
+        <div class="title">AirportSim</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9cbdb30e-40f4-433a-8f61-0bd255733e2c.jpg" alt="Alan Wake II">
+        <div class="title">Alan Wake II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0f0d4cfe-755e-4d2c-a55f-8f1ad1b00a3f.jpg" alt="Alan Wake Remastered">
+        <div class="title">Alan Wake Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/012452c5-817d-4d05-9788-0f69186b31a6.jpg" alt="Alaskan Road Truckers">
+        <div class="title">Alaskan Road Truckers</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/065f5603-9711-4061-a342-a806c8249931.jpg" alt="All Elite Wrestling: Fight Forever">
+        <div class="title">All Elite Wrestling: Fight Forever</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/68476f6f-c91b-4b17-b292-2a5c13f8901a.jpg" alt="Ambulance Life: A Paramedic Simulator">
+        <div class="title">Ambulance Life: A Paramedic Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7f5b3a96-8402-4b37-b4ca-c7c5942a66d4.jpg" alt="American Theft 80s">
+        <div class="title">American Theft 80s</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2446d2d2-2b5a-464a-8a1c-53e12b9332b4.jpg" alt="American Truck Simulator">
+        <div class="title">American Truck Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ff8af239-4bb8-4f47-b3e7-cc24785cdfeb.jpg" alt="Amerzone: The Explorer's Legacy">
+        <div class="title">Amerzone: The Explorer's Legacy</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d92e9364-a41c-49fa-afee-d45748323bde.jpg" alt="Ancestors: The Humankind Odyssey">
+        <div class="title">Ancestors: The Humankind Odyssey</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b38bb240-67e9-450b-b22c-b874969a4baf.jpg" alt="Anno 1800">
+        <div class="title">Anno 1800</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fbb73bd5-22fa-4255-aa9a-869dc18aeab8.jpg" alt="Anno 2205">
+        <div class="title">Anno 2205</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/531bcc59-795e-42b9-8d70-d11553aa548a.jpg" alt="Anonymous Hacker Simulator">
+        <div class="title">Anonymous Hacker Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e48de1b9-932a-4e57-aa4a-55be3dbb374a.jpg" alt="AO International Tennis">
+        <div class="title">AO International Tennis</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9bf119c7-4258-4e67-a245-524748cc711a.jpg" alt="AO Tennis 2">
+        <div class="title">AO Tennis 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3a80d05a-b9f5-4ce0-942a-c80b462e65de.jpg" alt="Architect Life: A House Design Simulator">
+        <div class="title">Architect Life: A House Design Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0bd4fdf2-2abb-4aaf-ad76-b5144e87ca8d.jpg" alt="Arma 3 v2.12">
+        <div class="title">Arma 3 v2.12</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/73be767f-147b-46eb-a2fd-e55a50b95678.jpg" alt="Arma 3 v2.18">
+        <div class="title">Arma 3 v2.18</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fdd42b19-f388-4b09-97bf-ddadd5e8fc4f.jpg" alt="Arma Reforger">
+        <div class="title">Arma Reforger</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b2874f9c-a9d5-4c60-8cdd-682b76978d7c.jpg" alt="Assassin's Creed Brotherhood">
+        <div class="title">Assassin's Creed Brotherhood</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f17d0bfd-070a-44ce-8f57-0b5a918f79d1.jpg" alt="Assassin's Creed III Remastered">
+        <div class="title">Assassin's Creed III Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/639c4f31-aa97-4bde-b84b-72ad207fa0ed.jpg" alt="Assassin's Creed IV: Black Flag - Jackdaw Edition">
+        <div class="title">Assassin's Creed IV: Black Flag - Jackdaw Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/69419a4a-c491-4091-9cf5-be86d256fd59.jpg" alt="Assassin's Creed Mirage">
+        <div class="title">Assassin's Creed Mirage</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4976d868-5d1b-43e1-8cc8-6b0270923b02.jpg" alt="Assassin's Creed Origins: The Curse of the Pharaohs">
+        <div class="title">Assassin's Creed Origins: The Curse of the Pharaohs</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a0a6234f-deb2-4553-8b27-d3c91eb6fc93.jpg" alt="Assassin's Creed Revelations">
+        <div class="title">Assassin's Creed Revelations</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/80e0ca1d-9f46-4298-9c5a-8eaec4034ef1.jpg" alt="Assassin's Creed Syndicate">
+        <div class="title">Assassin's Creed Syndicate</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e136a535-9343-40fb-8a8f-eeb1cf85a358.jpg" alt="Assassin's Creed Valhalla: Complete Edition">
+        <div class="title">Assassin's Creed Valhalla: Complete Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cab125f6-ce41-48b1-a853-4dd4a56ff982.jpg" alt="Assassin's Creed: Odyssey - Ultimate Edition">
+        <div class="title">Assassin's Creed: Odyssey - Ultimate Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dad7d3c9-97ca-4a09-b038-5be2e60842d3.jpg" alt="Assassin's Creed: Unity - Limited Edition">
+        <div class="title">Assassin's Creed: Unity - Limited Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/6578b6aa-edb2-4337-95c0-de0b64437b40.jpg" alt="Assetto Corsa">
+        <div class="title">Assetto Corsa</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1d939db4-b5d6-4882-8014-3c9bff47039d.jpg" alt="Assetto Corsa Competizione">
+        <div class="title">Assetto Corsa Competizione</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/189fa6ed-cac8-43ae-a4c4-43af1b002912.jpg" alt="Assetto Corsa EVO">
+        <div class="title">Assetto Corsa EVO</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a498945e-79a9-4a95-9f98-41e2d6f5d5ca.jpg" alt="Autobahn Police Simulator 2">
+        <div class="title">Autobahn Police Simulator 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/811e0be4-5af0-49d4-8559-03c43c0d6e1c.jpg" alt="Autobahn Police Simulator 3">
+        <div class="title">Autobahn Police Simulator 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8f076df0-5426-495b-9f93-afc809118b24.jpg" alt="Automation: The Car Company Tycoon Game">
+        <div class="title">Automation: The Car Company Tycoon Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/95cc1efe-10bd-42da-9676-fdbfc02558da.jpg" alt="Autopsy Simulator">
+        <div class="title">Autopsy Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/38d6ace6-e7ac-43ed-972b-db66d5e1d362.jpg" alt="Bakery Simulator">
+        <div class="title">Bakery Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3fbb64b1-6f6c-4598-bf69-9bb6b6d50478.jpg" alt="Baldur's Gate 3">
+        <div class="title">Baldur's Gate 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e84af72f-d32c-413c-8aee-84ea91227bd1.jpg" alt="Barn Finders">
+        <div class="title">Barn Finders</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/40477a7b-041c-4c51-8d4e-315eab8d9e1a.jpg" alt="Batman: Arkham Asylum - Game of the Year Edition">
+        <div class="title">Batman: Arkham Asylum - Game of the Year Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/405e4c67-b6d5-4a11-8f43-301fedf512b4.jpg" alt="Batman: Arkham City - Game of the Year Edition">
+        <div class="title">Batman: Arkham City - Game of the Year Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dc393391-d471-4a73-b9ae-83157d6d4147.jpg" alt="Batman: Arkham Knight - Premium Edition">
+        <div class="title">Batman: Arkham Knight - Premium Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7a09b278-d835-4324-8398-7850a4c482a6.jpg" alt="Batman: Arkham Origins - Collector's Edition">
+        <div class="title">Batman: Arkham Origins - Collector's Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cdaa3c2a-5dca-4b7f-906b-d716d89ae76f.jpg" alt="Battlefield 1">
+        <div class="title">Battlefield 1</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/74d39197-9375-4540-9598-45ad7efe6521.jpg" alt="Battlefield 6">
+        <div class="title">Battlefield 6</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f51d537f-ebb0-4505-b6d0-299d98a085d7.jpg" alt="Battlefield Hardline">
+        <div class="title">Battlefield Hardline</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1ffb80d5-1169-4f2d-aa05-59d0dfe199db.jpg" alt="Battlefield V">
+        <div class="title">Battlefield V</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/98035a8b-96ef-4cf3-a2c8-7dcbb35550f4.jpg" alt="BeamNG.drive">
+        <div class="title">BeamNG.drive</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/24a9af04-5183-4d16-91f9-b89222af3f06.jpg" alt="Beyond Blue">
+        <div class="title">Beyond Blue</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ea4ae2b0-aaff-4684-a6ed-d590af4a0755.jpg" alt="Beyond Enemy Lines 2">
+        <div class="title">Beyond Enemy Lines 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ff1bb73f-2992-42a1-b35a-3d2ac220d4b6.jpg" alt="Beyond: Two Souls">
+        <div class="title">Beyond: Two Souls</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/6f934e44-9b86-4a2a-8a0d-87e29d325ace.jpg" alt="Big Ambitions">
+        <div class="title">Big Ambitions</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f10ec422-4c37-4b73-ada9-650eef6eb20b.jpg" alt="Biker Garage: Mechanic Simulator">
+        <div class="title">Biker Garage: Mechanic Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2ce4e9fa-cf7e-4138-ae8d-35aacfdc9706.jpg" alt="Bio Inc. Redemption">
+        <div class="title">Bio Inc. Redemption</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ceb87d73-639e-447e-b738-c2100df32752.jpg" alt="Biotope: Aquarium Simulator">
+        <div class="title">Biotope: Aquarium Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dbf9ca62-24f7-4e05-aa08-0aaf4ff5144a.jpg" alt="Black Mesa">
+        <div class="title">Black Mesa</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f27da5cb-0399-4688-bc39-3bb15ae995d6.jpg" alt="Blur">
+        <div class="title">Blur</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7782b716-5765-4d72-ab2c-b404d2f1b96b.jpg" alt="Bodycam">
+        <div class="title">Bodycam</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/35dd9c26-e80c-4359-a996-430bc0bac03c.jpg" alt="Border Officer">
+        <div class="title">Border Officer</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/6acb6925-8d95-46af-b7a4-6e16539a8481.jpg" alt="Borderlands 2">
+        <div class="title">Borderlands 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fe2e68cc-aac8-4e1e-9155-b3915be509f3.jpg" alt="Borderlands 3">
+        <div class="title">Borderlands 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a0485a27-c1a2-4df8-879a-75b160328a7b.jpg" alt="Borderlands: Game of the Year Enhanced">
+        <div class="title">Borderlands: Game of the Year Enhanced</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ecb39c26-28da-4d95-80c3-1a921af3c87c.jpg" alt="Borderlands: The Pre-Sequel">
+        <div class="title">Borderlands: The Pre-Sequel</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1d5b7735-16b1-4f96-a227-d24d5f25da4d.jpg" alt="Brewmaster">
+        <div class="title">Brewmaster</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2d87180e-68cb-4218-85df-284ac863bc88.jpg" alt="Broken Arrow">
+        <div class="title">Broken Arrow</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3ca2020a-41e3-4a3b-ad1a-77ca692d38fa.jpg" alt="BugOut">
+        <div class="title">BugOut</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cbbb1263-76b0-443d-b019-74595dc0b0c1.jpg" alt="Builder Simulator">
+        <div class="title">Builder Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a6781599-79c1-4e63-b03b-d0c8255cd321.jpg" alt="Bully: Scholarship Edition">
+        <div class="title">Bully: Scholarship Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c65d551b-49f5-4c62-82c4-36df49850c14.jpg" alt="Bus Driver Simulator 2019">
+        <div class="title">Bus Driver Simulator 2019</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5e433e45-a987-4ae2-afe5-15ec1e6a1719.jpg" alt="Bus Flipper Simulator">
+        <div class="title">Bus Flipper Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d476678c-80c0-4d75-8074-69b054812934.jpg" alt="Bus Simulator 16">
+        <div class="title">Bus Simulator 16</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/adc6c07d-450c-4c66-b08b-c0a9ed4d272d.jpg" alt="Bus Simulator 18">
+        <div class="title">Bus Simulator 18</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/46158c7e-5f2f-4f34-9c7d-7e9dc2e651d9.jpg" alt="Bus Simulator 21: Next Stop - Gold Edition">
+        <div class="title">Bus Simulator 21: Next Stop - Gold Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b8a33eda-b238-4606-9f16-498fa68ce203.jpg" alt="Call of Duty: Black Ops 7">
+        <div class="title">Call of Duty: Black Ops 7</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9eb4585a-757a-4609-ac83-ced8771a05bb.jpg" alt="Call of Duty: Black Ops Cold War">
+        <div class="title">Call of Duty: Black Ops Cold War</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/50d1fe5d-9a2c-45e7-83cc-bcaa50756838.jpg" alt="Call of Duty: Infinite Warfare">
+        <div class="title">Call of Duty: Infinite Warfare</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/db8d96fb-0753-4561-bb60-f390dd2ab70d.jpg" alt="Call of Duty: Modern Warfare">
+        <div class="title">Call of Duty: Modern Warfare</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/89dd09c3-d74c-4d20-824f-0300fb4c0bb0.jpg" alt="Call of Duty: Modern Warfare 2 Campaign Remastered">
+        <div class="title">Call of Duty: Modern Warfare 2 Campaign Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8cdf0fcc-1879-4596-a5b3-b09b96522388.jpg" alt="Call of Duty: Modern Warfare 3">
+        <div class="title">Call of Duty: Modern Warfare 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b2dda6ac-ffcf-4165-a328-7c6d11a648a7.jpg" alt="Call of Duty: Modern Warfare II">
+        <div class="title">Call of Duty: Modern Warfare II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a60c568f-da4e-4948-abb0-1fb48fa323f2.jpg" alt="Call of Duty: Modern Warfare III">
+        <div class="title">Call of Duty: Modern Warfare III</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/48540997-165b-4626-81bf-a8e162842ecd.jpg" alt="Call of Duty: WWII">
+        <div class="title">Call of Duty: WWII</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0f752a85-6b7f-4484-8381-5e3e35e0ae21.jpg" alt="Call to Arms">
+        <div class="title">Call to Arms</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0a5d2da8-18d2-453a-8d36-ac75c4e944ba.jpg" alt="Capitalism II">
+        <div class="title">Capitalism II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/92eeb433-6269-4487-a8ba-237c8f26850e.jpg" alt="Car Dealer Simulator">
+        <div class="title">Car Dealer Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/679ce097-5966-466b-b9df-6a81d72904f2.jpg" alt="Car Detailing Simulator">
+        <div class="title">Car Detailing Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e7bc337c-bbcb-49ab-8562-c3ce0abffb78.jpg" alt="Car Mechanic Simulator 2018">
+        <div class="title">Car Mechanic Simulator 2018</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d69d1c5c-22d8-4784-8907-a2bc9524644b.jpg" alt="Car Mechanic Simulator 2021">
+        <div class="title">Car Mechanic Simulator 2021</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a223af60-af30-4464-a40c-af66e339cc86.jpg" alt="Car Trader Simulator">
+        <div class="title">Car Trader Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5845bba4-c828-433c-a04c-a2d713e36b42.jpg" alt="Car Tune: Project">
+        <div class="title">Car Tune: Project</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7cb83360-da25-43e8-8dad-24853f425d76.jpg" alt="Carrier Command: Gaea Mission">
+        <div class="title">Carrier Command: Gaea Mission</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d8ec4ef6-f029-4b95-bebf-cbdd13a32f04.jpg" alt="Cartel Tycoon">
+        <div class="title">Cartel Tycoon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c3ad8f1a-130b-49ff-8860-06f68738327f.jpg" alt="Cash Cleaner Simulator">
+        <div class="title">Cash Cleaner Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/90a29d7e-cc07-426a-9921-44df3d6d7814.jpg" alt="Castle Flipper">
+        <div class="title">Castle Flipper</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d60090b3-d455-4605-9695-d8b56ba605a3.jpg" alt="Chef: A Restaurant Tycoon Game">
+        <div class="title">Chef: A Restaurant Tycoon Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/198495f6-8724-4267-9d05-64be3e7e53d3.jpg" alt="Chornobyl Liquidators">
+        <div class="title">Chornobyl Liquidators</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/82cd1b30-dd14-417e-ac38-581dc8c74912.jpg" alt="Cities: Skylines - Deluxe Edition">
+        <div class="title">Cities: Skylines - Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a808a11a-0fd7-4762-aabb-0de05aeacf9b.jpg" alt="Cities: Skylines II">
+        <div class="title">Cities: Skylines II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/afc661c9-b0da-4de0-8377-ac7b6ea01fa5.jpg" alt="City Bus Manager">
+        <div class="title">City Bus Manager</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4c9925b8-a25f-4c75-a527-6c1775d1133b.jpg" alt="City Bus Simulator 2024">
+        <div class="title">City Bus Simulator 2024</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/132c7e64-91eb-4be4-98f5-2b745db057a5.jpg" alt="City Car Driving">
+        <div class="title">City Car Driving</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0c1ac817-1fea-4b12-831f-8b360f2c885c.jpg" alt="City Game Studio">
+        <div class="title">City Game Studio</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/af76e3b9-d559-469a-9468-f624c74ea6ea.jpg" alt="City Patrol: Police">
+        <div class="title">City Patrol: Police</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cdecc53e-12da-4ec4-a4c7-242770a91f93.jpg" alt="Cityconomy: Service for your City">
+        <div class="title">Cityconomy: Service for your City</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/aa8e6871-dd6e-4311-83fd-9f86eedfd54f.jpg" alt="Clair Obscur: Expedition 33">
+        <div class="title">Clair Obscur: Expedition 33</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3b67f0cb-dea7-42b1-86c4-0acf330bf1df.jpg" alt="Coast Guard">
+        <div class="title">Coast Guard</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c2953516-02ce-4297-96e6-cc1353099857.jpg" alt="Cold Waters">
+        <div class="title">Cold Waters</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f8105c58-e2ac-49ae-b098-e3d4f795eff5.jpg" alt="Command: Modern Operations - Desert Storm">
+        <div class="title">Command: Modern Operations - Desert Storm</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/aefdc348-5579-4143-91db-e1046f7670c3.jpg" alt="Company of Heroes 2: Master Collection">
+        <div class="title">Company of Heroes 2: Master Collection</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1e3a0f70-a069-4b7d-aa75-56c486989f0e.jpg" alt="Computer Tycoon">
+        <div class="title">Computer Tycoon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b5df2e9d-8d08-4c21-86ba-0fc3636647aa.jpg" alt="Conflict: Desert Storm">
+        <div class="title">Conflict: Desert Storm</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/14617e84-0a9e-4a62-b955-dfdac56712ff.jpg" alt="Construction Simulator 2">
+        <div class="title">Construction Simulator 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9e1a5ea4-4b3e-42fd-b4ac-83d8da470900.jpg" alt="Construction Simulator 2015">
+        <div class="title">Construction Simulator 2015</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c2a3b6c0-b859-40b6-a74f-9fd7dd7550c5.jpg" alt="Constructor Plus">
+        <div class="title">Constructor Plus</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8c98e0f8-9541-4a1f-90b1-e8145fc3e175.jpg" alt="Contagion">
+        <div class="title">Contagion</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b01bc467-1a4b-4f04-99c3-fe6968c28bc3.jpg" alt="Contraband Police">
+        <div class="title">Contraband Police</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3e802837-dc23-4569-a2fe-8571145ade87.jpg" alt="Control: Ultimate Edition">
+        <div class="title">Control: Ultimate Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ada6a8b3-32d2-439c-bf36-c3d56f0bf63c.jpg" alt="Cooking Simulator">
+        <div class="title">Cooking Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/80c63501-02c8-4870-8d87-6365db0a2e16.jpg" alt="Counter Terrorist Agency">
+        <div class="title">Counter Terrorist Agency</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3b782f71-8965-4771-996c-f03871d0e1ad.jpg" alt="Crane Simulator 2009">
+        <div class="title">Crane Simulator 2009</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bee6e23a-fe61-428b-a1f2-ffae97f9d8dc.jpg" alt="Crime Boss: Rockay City">
+        <div class="title">Crime Boss: Rockay City</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fe7d8631-1417-4ba5-acdf-b153386b6fd7.jpg" alt="Crime Scene Cleaner">
+        <div class="title">Crime Scene Cleaner</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bb7a5d85-e51b-4bbc-ad4f-a4dfb2d22bb4.jpg" alt="Crusader Kings II">
+        <div class="title">Crusader Kings II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b1f6fad5-e7be-49ac-944f-30f7471a853c.jpg" alt="Crusader Kings III">
+        <div class="title">Crusader Kings III</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3142637e-c4c9-42fd-9f5c-4a35ab39d636.jpg" alt="Crysis 2 Remastered">
+        <div class="title">Crysis 2 Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2a858f1e-6c2e-49ab-bddd-7d64338d63f9.jpg" alt="Crysis 3 Remastered">
+        <div class="title">Crysis 3 Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bff952c1-575e-479d-8a1a-092eba4a78bc.jpg" alt="Crysis Remastered">
+        <div class="title">Crysis Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e7fbcf0b-e193-4ee9-87e5-63ee7db7909f.jpg" alt="CSI: 3 Dimensions of Murder">
+        <div class="title">CSI: 3 Dimensions of Murder</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/68dcd29a-c632-4b61-8601-7fe5453ff468.jpg" alt="CSI: Crime Scene Investigation">
+        <div class="title">CSI: Crime Scene Investigation</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4ecbadab-2f0a-4c40-8fdb-5c383e10bcfc.jpg" alt="CSI: Dark Motives">
+        <div class="title">CSI: Dark Motives</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b74d96ac-7e89-40bf-a17d-fcde2efcb434.jpg" alt="CSI: Deadly Intent">
+        <div class="title">CSI: Deadly Intent</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/63a7d1b6-981d-48e0-b076-f4624d506709.jpg" alt="CSI: Fatal Conspiracy">
+        <div class="title">CSI: Fatal Conspiracy</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/af309842-df1c-4eaf-87d6-51540550a161.jpg" alt="CSI: Hard Evidence">
+        <div class="title">CSI: Hard Evidence</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0de886d0-13d5-435e-915d-24cca8765b8c.jpg" alt="Cultist Simulator">
+        <div class="title">Cultist Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/52a18597-622b-440c-be8f-43cf9975a4bc.jpg" alt="Cyberpunk 2077">
+        <div class="title">Cyberpunk 2077</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8b7adecc-cf2f-4ade-ae5a-c2d6c94cea78.jpg" alt="DAHALO">
+        <div class="title">DAHALO</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a8d20daa-7ee8-49c1-8c12-402d27836d3c.jpg" alt="Danger Zone 2">
+        <div class="title">Danger Zone 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3b2f64cf-a008-46f7-8a1e-cd146c73e064.jpg" alt="Days Gone Remastered">
+        <div class="title">Days Gone Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a9c81dfc-f903-4368-8fff-b56549ba1855.jpg" alt="Dead Island 2">
+        <div class="title">Dead Island 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/22950e45-a349-4cfe-81bd-2c90269616eb.jpg" alt="Dead Island: Riptide - Definitive Edition">
+        <div class="title">Dead Island: Riptide - Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8fe8df3c-a9b4-4018-85dd-2615ddc5a340.jpg" alt="Dead Space">
+        <div class="title">Dead Space</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/867d18dc-9bcf-41d0-aabe-24c1d1f33c45.jpg" alt="Dead Space 2">
+        <div class="title">Dead Space 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/87365e33-05a3-47f1-939a-ab3e7b4eba56.jpg" alt="Dead Space 3">
+        <div class="title">Dead Space 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/df046c2e-781b-49e2-9883-1bd6d24c8cb6.jpg" alt="Deadliest Catch: Alaskan Storm">
+        <div class="title">Deadliest Catch: Alaskan Storm</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0b20e894-6099-4fa9-bb85-306ce1d726c8.jpg" alt="Deadliest Catch: The Game">
+        <div class="title">Deadliest Catch: The Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/49ed0d95-23e9-4aac-a920-6fd0f4321e18.jpg" alt="Deadly Premonition: Director's Cut">
+        <div class="title">Deadly Premonition: Director's Cut</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/661a02f6-d2b7-4fa2-beb4-99fcba2cf501.jpg" alt="Death Stranding">
+        <div class="title">Death Stranding</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2b7c4354-5874-40e4-8b9f-a41c139cb1fc.jpg" alt="Deconstruction Simulator">
+        <div class="title">Deconstruction Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/94a24b53-767b-4c20-99db-99ff3ffbaecb.jpg" alt="Deep Diving Simulator">
+        <div class="title">Deep Diving Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2949ac64-4ccf-4c44-94aa-43390bbbe2f5.jpg" alt="Deliver Us The Moon">
+        <div class="title">Deliver Us The Moon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/91f9d1b8-a274-405e-8090-29746a6286c2.jpg" alt="Delta Force: Black Hawk Down">
+        <div class="title">Delta Force: Black Hawk Down</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3c1e5d29-3261-4382-b997-04cfd2904fab.jpg" alt="Democracy 3 Africa">
+        <div class="title">Democracy 3 Africa</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d37377a3-8d3a-4d0d-8785-83943c0edf93.jpg" alt="Demolish & Build 2017">
+        <div class="title">Demolish & Build 2017</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0bb51b38-5abf-4b36-8c11-23bbc30d2b86.jpg" alt="Demolish & Build 2018">
+        <div class="title">Demolish & Build 2018</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b74237e6-792d-4733-b877-ebdfe9b3e6f2.jpg" alt="Demolition Expert: The Simulation">
+        <div class="title">Demolition Expert: The Simulation</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2bc23a63-fb85-41f6-b6d7-9ebe23650c2f.jpg" alt="Depth">
+        <div class="title">Depth</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9387885b-8906-4b16-bd91-517de871229c.jpg" alt="Detroit: Become Human">
+        <div class="title">Detroit: Become Human</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/18aa79ea-07ca-4a68-a64f-7aa3f0268489.jpg" alt="Deus Ex: Mankind Divided - Digital Deluxe Edition">
+        <div class="title">Deus Ex: Mankind Divided - Digital Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/98d7a9ab-8771-4156-bcee-9e47bfb45ffc.jpg" alt="Device Doctor Simulator 2024">
+        <div class="title">Device Doctor Simulator 2024</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e69fc186-0c5e-480e-8f56-f54e491c8fff.jpg" alt="Diesel Brothers: The Game">
+        <div class="title">Diesel Brothers: The Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5a4b8304-c6ee-43dd-92d9-2173df573c40.jpg" alt="Disco Elysium">
+        <div class="title">Disco Elysium</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/23ba634e-3169-4930-a654-9553dbbf4557.jpg" alt="Dishonored 2">
+        <div class="title">Dishonored 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c7a1ce60-f370-4882-bbd5-26f7412183e1.jpg" alt="Dishonored: Death of the Outsider">
+        <div class="title">Dishonored: Death of the Outsider</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3f62867d-d3b0-40fd-a80c-f9ba13a63b11.jpg" alt="Dishonored: Game of the Year Edition">
+        <div class="title">Dishonored: Game of the Year Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/de75424e-421d-489f-a4c1-719c7b6166a8.jpg" alt="Dragon Age II: Ultimate Edition">
+        <div class="title">Dragon Age II: Ultimate Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/48e838ff-15b3-4921-abde-ab4bd1aab812.jpg" alt="Dragon Age: Inquisition - Deluxe Edition">
+        <div class="title">Dragon Age: Inquisition - Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f0090867-fe9d-4098-a3f5-0242a4238c81.jpg" alt="Dragon Age: Origins - Ultimate Edition">
+        <div class="title">Dragon Age: Origins - Ultimate Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fc93ccf8-0bb2-43ec-976f-578b514a1e82.jpg" alt="Dragon Age: The Veilguard">
+        <div class="title">Dragon Age: The Veilguard</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/07c2be6f-a3df-4349-ba0c-4073d32fd807.jpg" alt="Dragon's Dogma II">
+        <div class="title">Dragon's Dogma II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3fb1f5f7-fd45-4c02-989a-3aa5a84937ad.jpg" alt="Dragon's Dogma: Dark Arisen">
+        <div class="title">Dragon's Dogma: Dark Arisen</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/91659efc-700e-47bf-8c20-fc525f2df903.jpg" alt="Draugen">
+        <div class="title">Draugen</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3d9dbd60-44b3-440d-8ee8-e52804d7152b.jpg" alt="Drift 21">
+        <div class="title">Drift 21</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c25c10f7-9783-4bdd-b5a8-9211c536df3d.jpg" alt="Driving Simulator 2012">
+        <div class="title">Driving Simulator 2012</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/edae3121-3c82-464f-b72d-e4e7c5c3d644.jpg" alt="Drug Dealer Simulator">
+        <div class="title">Drug Dealer Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/95131577-ef1c-43d7-8782-9ccb217d56c0.jpg" alt="Dying Light 2: Stay Human">
+        <div class="title">Dying Light 2: Stay Human</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/97d11672-26fe-4ed6-9d8a-d433a2b188da.jpg" alt="Dying Light: Platinum Edition">
+        <div class="title">Dying Light: Platinum Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/861d6b4f-ef7e-412d-9d5e-56441c6fcba2.jpg" alt="Dying Light: The Beast">
+        <div class="title">Dying Light: The Beast</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/32ab7dbe-34d1-4612-9528-9722006277d9.jpg" alt="Earthfall">
+        <div class="title">Earthfall</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8f8433db-9055-495d-9314-9984e3054389.jpg" alt="Edición Deluxe de Mass Effect: Andromeda">
+        <div class="title">Edición Deluxe de Mass Effect: Andromeda</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7eaeaca0-08e5-4ca2-8eed-c2620d96ce92.jpg" alt="Elden Ring: Deluxe Edition">
+        <div class="title">Elden Ring: Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dcfc87b8-558e-45b9-9b3b-64dc944934a8.jpg" alt="Electrician Simulator">
+        <div class="title">Electrician Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bc0a0362-4b07-4c89-8a74-64d42ea4fac8.jpg" alt="Emergency 20">
+        <div class="title">Emergency 20</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/96b18201-626e-4881-b2c7-8a33743287c0.jpg" alt="Emergency 2017">
+        <div class="title">Emergency 2017</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d3790175-f7c6-4542-86f5-52334e03d9de.jpg" alt="Emergency Call 112: The Fire Fighting Simulation">
+        <div class="title">Emergency Call 112: The Fire Fighting Simulation</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f4828e91-6624-4549-b9f9-eca099b838e7.jpg" alt="Emergency Call 112: The Fire Fighting Simulation 2">
+        <div class="title">Emergency Call 112: The Fire Fighting Simulation 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cb58fde3-9765-4610-9bfa-9dfd54114c06.jpg" alt="Emergency Call: The Attack Squad">
+        <div class="title">Emergency Call: The Attack Squad</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8df76c3f-12d7-4ddd-9146-751eba0f41e4.jpg" alt="EmergeNYC">
+        <div class="title">EmergeNYC</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/cf220015-2469-445a-9098-f9e6966c44bc.jpg" alt="Endless Legend: Symbiosis">
+        <div class="title">Endless Legend: Symbiosis</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4c58e783-a393-4c63-9fad-77637f2f781b.jpg" alt="Endless Space 2">
+        <div class="title">Endless Space 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c0c93d7e-e65a-4a56-85a4-c32a8c7bddfd.jpg" alt="Enforcer: Police Crime Action">
+        <div class="title">Enforcer: Police Crime Action</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c1107e95-66e3-46b4-a22f-742afb28b179.jpg" alt="Euro Truck Simulator 2">
+        <div class="title">Euro Truck Simulator 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9a79d0b0-fdb3-456d-8b27-2c19feb4cc1e.jpg" alt="Europa Universalis V">
+        <div class="title">Europa Universalis V</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/86bc2c21-476a-4071-a103-8809ecc2656d.jpg" alt="European Ship Simulator">
+        <div class="title">European Ship Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/91fee2d5-1635-4823-9d1a-ce518586b242.jpg" alt="Expeditions: A MudRunner Game">
+        <div class="title">Expeditions: A MudRunner Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/66e40b97-fa13-49c8-814f-4da6e2468ac1.jpg" alt="F1 2017">
+        <div class="title">F1 2017</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/610568dd-63ca-4925-8653-ce959a40730f.jpg" alt="F1 2018">
+        <div class="title">F1 2018</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b52a935f-b31f-407c-b85f-fecd00660bb3.jpg" alt="F1 2020">
+        <div class="title">F1 2020</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/95589610-cc30-4a2e-8ff4-32aedf788cf3.jpg" alt="F1 22: Champions Edition">
+        <div class="title">F1 22: Champions Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/58ed77d5-9192-45ec-90a3-f3aad3e61521.jpg" alt="Fable III">
+        <div class="title">Fable III</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/06d1abf6-9175-47a0-926b-65a31a78a888.jpg" alt="FaceRig">
+        <div class="title">FaceRig</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ac8e6939-7b79-4ddf-bc33-b620e9d8644b.jpg" alt="Factory Outlet Simulator">
+        <div class="title">Factory Outlet Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c15a6c27-9cc0-4dc1-8b66-cebe5e34198f.jpg" alt="Fade to Silence">
+        <div class="title">Fade to Silence</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4c27b0b4-eb84-4498-b595-a25620fcb746.jpg" alt="Fahrenheit: Indigo Prophecy Remastered">
+        <div class="title">Fahrenheit: Indigo Prophecy Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7ce5739c-0d6d-40d8-93d1-3f4b6116420a.jpg" alt="Fallout 3: Game of the Year Edition">
+        <div class="title">Fallout 3: Game of the Year Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d6867c0c-cb29-40d4-b29d-9bda203081d9.jpg" alt="Fallout 4: Game of the Year Edition">
+        <div class="title">Fallout 4: Game of the Year Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0505f01d-45b4-444a-b8ad-b59afba84c25.jpg" alt="Far Cry 3">
+        <div class="title">Far Cry 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0f90817b-6300-4302-abb8-75483ccce7da.jpg" alt="Far Cry 4">
+        <div class="title">Far Cry 4</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f56fe319-90eb-4e9d-b697-cce2e1763700.jpg" alt="Far Cry 5">
+        <div class="title">Far Cry 5</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/09a1cdb2-1074-4f29-bebc-25ebd6d78be2.jpg" alt="Far Cry 6">
+        <div class="title">Far Cry 6</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d256aa92-254f-42b4-b5e1-a586564f99bb.jpg" alt="Far Cry: Primal">
+        <div class="title">Far Cry: Primal</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5fe41097-b81f-4075-a074-c3ef96e56a78.jpg" alt="Farm Expert 2017">
+        <div class="title">Farm Expert 2017</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/929ec81c-436f-4e8f-acb5-bfbeaedbd66f.jpg" alt="Farmer's Dynasty">
+        <div class="title">Farmer's Dynasty</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5a8521cf-6961-42e1-9251-fa3d42f382aa.jpg" alt="Farming Simulator 17: Platinum Edition">
+        <div class="title">Farming Simulator 17: Platinum Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bc322d07-e1ee-41c9-b30a-1bac7cc4454d.jpg" alt="Farming Simulator 19: Platinum Edition">
+        <div class="title">Farming Simulator 19: Platinum Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fb39452c-4247-47c5-b433-1b83854da565.jpg" alt="Farming Simulator 22">
+        <div class="title">Farming Simulator 22</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9cd0aa82-4b9c-4434-aab2-795ad93d3d2e.jpg" alt="Farming Simulator 25">
+        <div class="title">Farming Simulator 25</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ab14c19b-6001-43d9-a86a-45ac8f9a2f6f.jpg" alt="Fast & Furious: Crossroads">
+        <div class="title">Fast & Furious: Crossroads</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a9356b1e-55f9-433d-901e-99670b3bce80.jpg" alt="Fernbus Coach Simulator">
+        <div class="title">Fernbus Coach Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/32bdc0d6-a126-4258-96ba-96fad028191e.jpg" alt="Ferocious">
+        <div class="title">Ferocious</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a6ccee8d-43a4-40e9-a547-05505a24aa0d.jpg" alt="Field of Glory: Empires">
+        <div class="title">Field of Glory: Empires</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4c8c6de4-07cf-4699-9b20-308c9ecba00e.jpg" alt="FIFA 19">
+        <div class="title">FIFA 19</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d76ba44a-45c2-4491-99f4-e05e32f30b9d.jpg" alt="FIFA 23">
+        <div class="title">FIFA 23</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d7531c4b-fddc-42fd-b848-1d95116d70d8.jpg" alt="FINAL FANTASY XV WINDOWS EDITION">
+        <div class="title">FINAL FANTASY XV WINDOWS EDITION</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/714743ba-d35a-4212-9aaa-392159cb647d.jpg" alt="Fire Commander">
+        <div class="title">Fire Commander</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b705f704-3ebc-4a20-83af-f4cc005ef804.jpg" alt="Firefighters 2014">
+        <div class="title">Firefighters 2014</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b1cee56f-a24a-4782-bc05-dea4700cc9d0.jpg" alt="Firefighting Simulator - The Squad">
+        <div class="title">Firefighting Simulator - The Squad</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e39202e4-ce85-4a21-ad29-1a58b602884d.jpg" alt="Firefighting Simulator: Ignite">
+        <div class="title">Firefighting Simulator: Ignite</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0556e4fe-fda5-46bf-9ff5-685658ef310c.jpg" alt="Fishing: Barents Sea">
+        <div class="title">Fishing: Barents Sea</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e7be7575-16d1-476f-af7f-bfcae3dbe6fb.jpg" alt="Fishing: North Atlantic">
+        <div class="title">Fishing: North Atlantic</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ecf2b921-c007-413a-a976-9b2e2ed3d558.jpg" alt="Fix it: The Handyman Simulator">
+        <div class="title">Fix it: The Handyman Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bf3ed449-4cc3-47ad-9bf1-38382fd7c7b7.jpg" alt="Flashing Lights: Police Fire EMS">
+        <div class="title">Flashing Lights: Police Fire EMS</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/36f08155-d7fc-4820-8bf5-da093ae235c2.jpg" alt="FlyInside Flight Simulator">
+        <div class="title">FlyInside Flight Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ae6ef7c0-2a5c-42fc-a31a-7725aed2e9db.jpg" alt="Food Truck Simulator">
+        <div class="title">Food Truck Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <div style="height: 280px; background: #333; display: flex; align-items: center; justify-content: center; color: #666;">No Cover</div>
+        <div class="title">Forklift Simulator 2019</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3cd1d52c-6f7d-4612-b46f-8d6d8f771047.jpg" alt="Forspoken">
+        <div class="title">Forspoken</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2bd7feb2-4c00-4e3a-9477-787170f6d675.jpg" alt="Fort Solis">
+        <div class="title">Fort Solis</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/773e3249-89a9-450d-b841-ffff45a24ea5.jpg" alt="Forza Horizon 3">
+        <div class="title">Forza Horizon 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e4ee4707-fe8b-4d45-b39f-08970784a956.jpg" alt="Forza Horizon 4: Ultimate Edition">
+        <div class="title">Forza Horizon 4: Ultimate Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/229d3869-8e2c-4cac-a8fa-2b126f02b928.jpg" alt="Forza Horizon 5">
+        <div class="title">Forza Horizon 5</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/25c034f2-b459-4e33-9cd3-2f764cbc0c35.jpg" alt="Forza Motorsport">
+        <div class="title">Forza Motorsport</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3b7b1acc-e5d3-4b67-a5c2-76cc91ef0ed1.jpg" alt="Forza Motorsport 7">
+        <div class="title">Forza Motorsport 7</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/713ffa9f-84a0-4401-9091-4de429c77c60.jpg" alt="Freeman: Guerrilla Warfare">
+        <div class="title">Freeman: Guerrilla Warfare</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/35fd4475-213f-47c7-a56d-1ca4059cfd8a.jpg" alt="Frostpunk 2">
+        <div class="title">Frostpunk 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a7bde475-9c80-4cc6-a068-b019ea6f8072.jpg" alt="Fuel Harvest Together">
+        <div class="title">Fuel Harvest Together</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c3ed9753-c2b6-42fa-99f1-35a90c209916.jpg" alt="Game of Thrones">
+        <div class="title">Game of Thrones</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/159b2b36-63bf-4064-9cf9-5b50857743dc.jpg" alt="Game of Thrones: A Telltale Games Series">
+        <div class="title">Game of Thrones: A Telltale Games Series</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a3e82121-28e8-4257-8763-bd0582dd09ce.jpg" alt="Gas Station Simulator">
+        <div class="title">Gas Station Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7ea83e60-4522-43dd-97b8-231287668d32.jpg" alt="Generation Zero">
+        <div class="title">Generation Zero</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/236f6b3a-670d-4aaf-99a3-10c6cde836cc.jpg" alt="Genesis Alpha One Deluxe Edition">
+        <div class="title">Genesis Alpha One Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/19b7fdaf-0fbd-4456-822c-8abc507391fd.jpg" alt="Ghost of Tsushima">
+        <div class="title">Ghost of Tsushima</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a0bc66fd-ea9f-4696-9f82-3bbc862f7aba.jpg" alt="Giant Machines 2017">
+        <div class="title">Giant Machines 2017</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d25360e9-0a78-43e8-aba9-9f7aae50b997.jpg" alt="God of War">
+        <div class="title">God of War</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/954c6c42-bb35-449a-b37f-448a7a21692d.jpg" alt="God of War Ragnarök">
+        <div class="title">God of War Ragnarök</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b3559b4f-7734-4cb9-ae01-b97a1b73b883.jpg" alt="Gold Mining Simulator">
+        <div class="title">Gold Mining Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5ab72376-38a4-41b6-8bdb-98b35ec55dc4.jpg" alt="Good Company">
+        <div class="title">Good Company</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/662f108b-b866-4d80-9e29-4fd2cd029645.jpg" alt="Gotham Knights">
+        <div class="title">Gotham Knights</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ceaf77e3-0d9b-46fb-8c25-b311006529dd.jpg" alt="Grand Theft Auto IV: Complete Edition">
+        <div class="title">Grand Theft Auto IV: Complete Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/edb4d41b-062b-4903-b67e-16e7c1d5bb34.jpg" alt="Grand Theft Auto: The Trilogy - The Definitive Edition">
+        <div class="title">Grand Theft Auto: The Trilogy - The Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/04426381-fbc9-46b4-9924-9d6f4870e564.jpg" alt="GreedFall">
+        <div class="title">GreedFall</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ba19884d-836d-4b1a-9d9e-74237cbd7857.jpg" alt="Green Hell">
+        <div class="title">Green Hell</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b6b81b4e-6367-47b8-8de5-191f8da74809.jpg" alt="Grey Hack">
+        <div class="title">Grey Hack</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1e3a8a98-48fd-44ae-a436-4464449e13ad.jpg" alt="GRID">
+        <div class="title">GRID</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/22da8158-d357-45ad-8afb-7eafcea7535f.jpg" alt="GT Manager">
+        <div class="title">GT Manager</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3cad5605-7e7a-4225-96c7-6f01909cd7b0.jpg" alt="Gunsmith Simulator">
+        <div class="title">Gunsmith Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b5b52830-3975-459c-9db5-d04a8d3835c9.jpg" alt="Hacker Evolution - 2019 HD remaster">
+        <div class="title">Hacker Evolution - 2019 HD remaster</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/74256573-2720-4850-b871-949620c320f6.jpg" alt="HackHub - Ultimate Hacker Simulator">
+        <div class="title">HackHub - Ultimate Hacker Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0c5271c6-a8da-4a71-85d6-d0aff99b1ee4.jpg" alt="HackMud">
+        <div class="title">HackMud</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c1e530d1-ca11-4f12-80cd-e8d49ceb1569.jpg" alt="Hacknet">
+        <div class="title">Hacknet</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/393482a3-64f8-45de-ad75-9d40fa25c3d7.jpg" alt="Hairdresser Simulator">
+        <div class="title">Hairdresser Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/30ec9008-fd26-41ef-9f75-bea38b04a8a9.jpg" alt="Halo: The Master Chief Collection">
+        <div class="title">Halo: The Master Chief Collection</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/877f379c-19ed-4d61-838e-9851f689bc18.jpg" alt="Hardware Engineers">
+        <div class="title">Hardware Engineers</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d4cde059-8037-46bd-b34d-4dd748c0a3f4.jpg" alt="Harry Potter and The Chamber of Secrets">
+        <div class="title">Harry Potter and The Chamber of Secrets</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/62d5d30f-6566-4444-8413-5bf4d1d11eca.jpg" alt="Harry Potter and the Half-Blood Prince">
+        <div class="title">Harry Potter and the Half-Blood Prince</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/46d62dfc-374b-4742-a641-97be95bca1f7.jpg" alt="Harry Potter and the Order of the Phoenix">
+        <div class="title">Harry Potter and the Order of the Phoenix</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5f833951-c1fc-478d-8330-9a3a71e0b376.jpg" alt="Harry Potter Y Las Reliquias De La Muerte Parte 1 ">
+        <div class="title">Harry Potter Y Las Reliquias De La Muerte Parte 1 </div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/89c9fcde-55b8-4071-8116-5c4c44472c97.jpg" alt="Harry Potter Y Las Reliquias De La Muerte Parte 2 ">
+        <div class="title">Harry Potter Y Las Reliquias De La Muerte Parte 2 </div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/26bf6dd7-2d2a-4494-8e6f-be341138ec91.jpg" alt="Harry Potter: Quidditch World Cup">
+        <div class="title">Harry Potter: Quidditch World Cup</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e1bef66b-d784-4afa-9f59-4212f0f7ea0b.jpg" alt="Heavy Cargo: The Truck Simulator">
+        <div class="title">Heavy Cargo: The Truck Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8af2c145-7b1b-4b2e-a8b5-298478ccd67a.jpg" alt="Heavy Rain">
+        <div class="title">Heavy Rain</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/627c9e14-e1cd-4237-9e9d-219672e22dd2.jpg" alt="Hellblade: Senua's Sacrifice">
+        <div class="title">Hellblade: Senua's Sacrifice</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d20b0fb5-5fc7-42f9-b49c-bb8beadeece2.jpg" alt="Hitman 3: Deluxe Edition">
+        <div class="title">Hitman 3: Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9f6012b7-1ff8-4328-a68a-fda694e13e96.jpg" alt="Hogwarts Legacy: Digital Deluxe Edition">
+        <div class="title">Hogwarts Legacy: Digital Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f63b61a8-2938-4dc7-988c-d4d530a3c8f5.jpg" alt="Horizon Forbidden West: Complete Edition">
+        <div class="title">Horizon Forbidden West: Complete Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f433f476-c78f-49d9-8fb5-9ef3af4d76ea.jpg" alt="Horizon Zero Dawn: Complete Edition">
+        <div class="title">Horizon Zero Dawn: Complete Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/34bf03db-fae3-4808-a565-21323903df7b.jpg" alt="Hotel Owner Simulator">
+        <div class="title">Hotel Owner Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/47b925ed-69c4-4e8c-a795-8c44749b7c60.jpg" alt="Hotel Renovator">
+        <div class="title">Hotel Renovator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/11963807-7713-447b-a3e9-c6b7e6503855.jpg" alt="House Flipper 2">
+        <div class="title">House Flipper 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b6fa7542-2098-4381-bf20-9363dd806a96.jpg" alt="House Party">
+        <div class="title">House Party</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d44849a8-4c7a-4267-b6f7-eb39b0a8eecb.jpg" alt="HUMANKIND">
+        <div class="title">HUMANKIND</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c9f35f27-ff92-4378-89b3-7408a8e7963c.jpg" alt="Hunting Simulator">
+        <div class="title">Hunting Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9acb9f63-fafb-4b56-ae27-8e9bf9bdd366.jpg" alt="Icarus">
+        <div class="title">Icarus</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bec4782f-7333-41ab-941f-aaa8f7c7495d.jpg" alt="Imperator: Rome">
+        <div class="title">Imperator: Rome</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d8bf384f-0bf8-418e-be7a-2a863bd761c4.jpg" alt="Incursion Red River">
+        <div class="title">Incursion Red River</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/de7782e4-9df1-4afe-b38e-d90fccc0ee6c.jpg" alt="Indiana Jones and the Great Circle">
+        <div class="title">Indiana Jones and the Great Circle</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/258ff374-e8fb-4166-8d8a-322939559ce7.jpg" alt="Industrial Firefighters">
+        <div class="title">Industrial Firefighters</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/02d285a7-0fb9-4689-b0ae-b2bf0068bec0.jpg" alt="Insurmountable">
+        <div class="title">Insurmountable</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7776f413-a2a3-473e-ada7-405ddd4d7744.jpg" alt="Interstellar Space: Genesis">
+        <div class="title">Interstellar Space: Genesis</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a27efcf0-01e3-4043-a451-aeaaa9c8583b.jpg" alt="inZOI">
+        <div class="title">inZOI</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3d78e591-e026-47e8-b88f-afcaabdee8e8.jpg" alt="Judgment">
+        <div class="title">Judgment</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1631fdfa-3147-4c73-a070-cdebc10cc52e.jpg" alt="Junkyard Simulator">
+        <div class="title">Junkyard Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/17f77a9a-adb9-4b8f-97e6-0695ff264dc4.jpg" alt="Jurassic World Evolution">
+        <div class="title">Jurassic World Evolution</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/874ce3e5-cee0-4708-b736-e0eba3b95f33.jpg" alt="Just Cause 3">
+        <div class="title">Just Cause 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/55b5a8a2-d711-4a92-93d4-86f5128b8da6.jpg" alt="Just Cause 4">
+        <div class="title">Just Cause 4</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8c2484d6-d6a4-4622-a1be-8cd91aeea1aa.jpg" alt="Just Ride: Apparent Horizon">
+        <div class="title">Just Ride: Apparent Horizon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5b0dee73-3928-4d06-8a80-819fdb9e4403.jpg" alt="Kerbal Space Program">
+        <div class="title">Kerbal Space Program</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/479f5c26-6101-4e05-bc81-9f991c98be05.jpg" alt="King of Retail">
+        <div class="title">King of Retail</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bf26defe-0512-4efc-878c-3b2355e97b21.jpg" alt="King of the World">
+        <div class="title">King of the World</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/066f5693-f7d9-4344-9297-04746e8bca11.jpg" alt="Kingdom Come: Deliverance">
+        <div class="title">Kingdom Come: Deliverance</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/575a9918-b6ee-46e8-8311-e4e4009e3733.jpg" alt="Kingdom Come: Deliverance II">
+        <div class="title">Kingdom Come: Deliverance II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/513f4c08-46c5-4569-9d4f-6d38ae34ae97.jpg" alt="Kingdom Wars 2: Definitive Edition">
+        <div class="title">Kingdom Wars 2: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fa1cc3ed-4383-4f83-833e-3c1ccf51d07a.jpg" alt="KitHack Model Club">
+        <div class="title">KitHack Model Club</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0c95b478-9fba-4d7d-a09b-2804cc8c61cd.jpg" alt="KURSK">
+        <div class="title">KURSK</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4d0181ce-f000-45b2-bb17-5f5ff6fb74e8.jpg" alt="L.A. Noire: The Complete Edition">
+        <div class="title">L.A. Noire: The Complete Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2de53847-891c-4ded-8912-aaf449243406.jpg" alt="Late Shift">
+        <div class="title">Late Shift</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9b9052ee-3694-4651-ab60-7e3e51b2147c.jpg" alt="Lawn Mowing Simulator">
+        <div class="title">Lawn Mowing Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/95599b27-5f2f-4519-a8ff-4ff355372614.jpg" alt="Le Mans Ultimate">
+        <div class="title">Le Mans Ultimate</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/43053091-28c4-4c71-af77-096267523029.jpg" alt="LEGO The Incredibles">
+        <div class="title">LEGO The Incredibles</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8ec2a3e9-58b2-49d2-b928-330eb8dfa807.jpg" alt="Life is Strange">
+        <div class="title">Life is Strange</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/750e5062-19ee-4cfe-bdfe-c84225960a69.jpg" alt="Life is Strange 2">
+        <div class="title">Life is Strange 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3ef4a1b6-61af-42ec-b09f-2ffe65542a81.jpg" alt="Life is Strange Remastered">
+        <div class="title">Life is Strange Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/301a96c7-a995-4634-b597-0f9fb78f4ac2.jpg" alt="Life is Strange: Before the Storm Remastered">
+        <div class="title">Life is Strange: Before the Storm Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/10e474cd-fed7-4679-9d77-f66cd065ce06.jpg" alt="Life is Strange: Double Exposure">
+        <div class="title">Life is Strange: Double Exposure</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/47e53dad-a247-435a-9758-5eb95398b046.jpg" alt="Lightstep Chronicles">
+        <div class="title">Lightstep Chronicles</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/599c04f0-84bb-4276-a115-c81f00a2a6cb.jpg" alt="Little Big Workshop">
+        <div class="title">Little Big Workshop</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bf17c80d-fbda-4e98-86e8-7e464039a114.jpg" alt="Lords of the Fallen">
+        <div class="title">Lords of the Fallen</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0cb02f64-ac11-4078-ba43-bfbb4bbd4c50.jpg" alt="Lost Records: Bloom & Rage">
+        <div class="title">Lost Records: Bloom & Rage</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b512cebc-c6c9-4458-a369-b9133392b9bc.jpg" alt="Lumberjack's Dynasty">
+        <div class="title">Lumberjack's Dynasty</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3aa3b00f-8f0c-47a2-bfbe-f11d150168ab.jpg" alt="Madden NFL 20">
+        <div class="title">Madden NFL 20</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/67e93cef-c3df-4f07-af97-f86b20a1bedc.jpg" alt="Mafia II: Definitive Edition">
+        <div class="title">Mafia II: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5a5cfa70-5456-4ca7-93c9-7a8208006fe4.jpg" alt="Mafia III: Definitive Edition">
+        <div class="title">Mafia III: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a1b9ba97-56cb-4825-8b37-397976e2d020.jpg" alt="Mafia: Definitive Edition">
+        <div class="title">Mafia: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/658d835f-06b0-4269-b3d4-e6e4dd47bcf9.jpg" alt="Maneater: Apex Edition">
+        <div class="title">Maneater: Apex Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dcc5d785-094c-4e27-8bb9-af98577eb0b1.jpg" alt="Marvel's Avengers">
+        <div class="title">Marvel's Avengers</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e176f7b4-df39-4fd3-9d31-76f9319da280.jpg" alt="Marvel's Guardians of the Galaxy">
+        <div class="title">Marvel's Guardians of the Galaxy</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a1f7e989-c602-4295-ab83-52726c1870fb.jpg" alt="Marvel's Spider-Man 2">
+        <div class="title">Marvel's Spider-Man 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e9336329-3bc7-46d3-8139-3a4a794b6067.jpg" alt="Marvel's Spider-Man Remastered">
+        <div class="title">Marvel's Spider-Man Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/464de6db-d4c3-40c8-b44c-df7dd538232a.jpg" alt="Marvel's Spider-Man: Miles Morales">
+        <div class="title">Marvel's Spider-Man: Miles Morales</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/77c5b457-31b6-49b1-8924-89c5f7551a22.jpg" alt="Mass Effect Legendary Edition">
+        <div class="title">Mass Effect Legendary Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/61a40839-85ab-44b9-8106-d03028583d24.jpg" alt="Middle-earth: Shadow of War - Gold Edition">
+        <div class="title">Middle-earth: Shadow of War - Gold Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/6aa46e9f-ab43-4380-9122-2e1139f1d491.jpg" alt="Mirror's Edge Catalyst">
+        <div class="title">Mirror's Edge Catalyst</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/200c6976-9fb2-4c97-8e81-7527cfcbf641.jpg" alt="Monuments Flipper">
+        <div class="title">Monuments Flipper</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/60f79734-8302-45ca-b4cb-186a576ef640.jpg" alt="MotoGP 23">
+        <div class="title">MotoGP 23</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/77cbd556-a7be-4635-be9f-a5144cc3f63c.jpg" alt="MotoGP 24">
+        <div class="title">MotoGP 24</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7a62a15e-e0d8-4de7-82fe-7c4414abd8db.jpg" alt="MotoGP 25">
+        <div class="title">MotoGP 25</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/47cbfb5b-6aa8-4952-9504-78f91b988fa7.jpg" alt="Motorcycle Mechanic Simulator 2021">
+        <div class="title">Motorcycle Mechanic Simulator 2021</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d6eab872-3fc8-453e-96b5-f1e9c3547135.jpg" alt="Motorsport Manager">
+        <div class="title">Motorsport Manager</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/44c49789-6781-4c02-9096-03d7b1cea7a5.jpg" alt="Mount & Blade II: Bannerlord">
+        <div class="title">Mount & Blade II: Bannerlord</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/21563232-d0cd-4d2b-aee4-d893951633c3.jpg" alt="Mr. Prepper">
+        <div class="title">Mr. Prepper</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/199232f5-2fab-4c93-bb6e-5586d7a69ebb.jpg" alt="Music Store Simulator">
+        <div class="title">Music Store Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/0f96c695-e2fb-4b74-b6f5-61ac0ffa8793.jpg" alt="Narcos: Rise of the Cartels">
+        <div class="title">Narcos: Rise of the Cartels</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b224c816-c393-4c81-8cfe-402f9e125fdf.jpg" alt="Nascar 21: Ignition">
+        <div class="title">Nascar 21: Ignition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a975a7f5-9d9e-46a9-894c-dca9bff7dcef.jpg" alt="NBA 2K23">
+        <div class="title">NBA 2K23</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/70920c70-f9a9-446d-b613-6bdf50c9015e.jpg" alt="Need for Speed Heat">
+        <div class="title">Need for Speed Heat</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b1fc9183-36a6-4a55-bdd7-65684a6dcdca.jpg" alt="Need for Speed: Carbon">
+        <div class="title">Need for Speed: Carbon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f3f53869-e4fa-4fe4-8109-a1113701fed5.jpg" alt="Need for Speed: The Run">
+        <div class="title">Need for Speed: The Run</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <div style="height: 280px; background: #333; display: flex; align-items: center; justify-content: center; color: #666;">No Cover</div>
+        <div class="title">New Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/69725787-565d-48bf-900b-f18ec0415109.jpg" alt="New Heights">
+        <div class="title">New Heights</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3e1da7d7-9272-4555-b478-273765933b11.jpg" alt="Nucleares">
+        <div class="title">Nucleares</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5faebe28-3c39-4d54-b061-09ba9e783839.jpg" alt="Oil Refinery: The Simulation">
+        <div class="title">Oil Refinery: The Simulation</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a69925f1-320b-4cd1-96f1-618fa135716f.jpg" alt="Olympic Games Tokyo 2020: The Official Video Game">
+        <div class="title">Olympic Games Tokyo 2020: The Official Video Game</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/015b4f2d-7620-4cb1-be00-4ea3234ce70b.jpg" alt="OUTBRK">
+        <div class="title">OUTBRK</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/23b07333-a121-412c-8f4e-917120eead86.jpg" alt="Pacific Drive">
+        <div class="title">Pacific Drive</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d1518a2b-b144-48f4-9236-5cbaf7e62451.jpg" alt="Parcel Simulator">
+        <div class="title">Parcel Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c8d26f11-72e0-46e9-93a2-b52bca647378.jpg" alt="Project Motor Racing">
+        <div class="title">Project Motor Racing</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4814c62a-1f7c-4e87-a944-b50166e1984e.jpg" alt="Resident Evil">
+        <div class="title">Resident Evil</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/815cc592-8031-4cec-b822-b010abd32cc9.jpg" alt="Resident Evil 2">
+        <div class="title">Resident Evil 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fec3d640-9fb6-455a-a05f-e3d516474239.jpg" alt="Resident Evil 3">
+        <div class="title">Resident Evil 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/970ba4ea-1f2d-4f10-af10-e3d0a8a7e56a.jpg" alt="Resident Evil 4">
+        <div class="title">Resident Evil 4</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a9d2c68d-002b-4e3d-a99d-6213709510de.jpg" alt="The Callisto Protocol">
+        <div class="title">The Callisto Protocol</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/af91ec0a-8313-43ab-a6b4-078cb11277de.jpg" alt="The Dark Pictures Anthology: House of Ashes">
+        <div class="title">The Dark Pictures Anthology: House of Ashes</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a08c9b4d-aa17-45b8-8907-c2e48d57c82d.jpg" alt="The Dark Pictures Anthology: Little Hope">
+        <div class="title">The Dark Pictures Anthology: Little Hope</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7b5c9cdd-ad43-4c6b-a44e-4363dd6bd9f2.jpg" alt="The Dark Pictures Anthology: The Devil in Me">
+        <div class="title">The Dark Pictures Anthology: The Devil in Me</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e3ed6100-2649-4bec-8653-7f26896d86fb.jpg" alt="The Elder Scrolls V: Skyrim - Special Edition">
+        <div class="title">The Elder Scrolls V: Skyrim - Special Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/dda7b0ff-918c-4dc4-821e-14e8cdb0cbab.jpg" alt="The Evil Within">
+        <div class="title">The Evil Within</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/80168fe6-64c8-49cf-9529-38385e826e03.jpg" alt="The Evil Within 2">
+        <div class="title">The Evil Within 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8fcbd3a7-4023-4105-b4b3-ed8792b1bcb2.jpg" alt="The Executive - Movie Industry Tycoon">
+        <div class="title">The Executive - Movie Industry Tycoon</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b8c110a4-99d6-4d6d-86cd-b997bf9a6f04.jpg" alt="The Last of Us Part I">
+        <div class="title">The Last of Us Part I</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/ea6b694f-89dd-4587-b4e2-d0e96cae9e4b.jpg" alt="The Last of Us Part II: Remastered">
+        <div class="title">The Last of Us Part II: Remastered</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/abfd7656-642f-4246-8abb-85591b2b8cf4.jpg" alt="The Operator">
+        <div class="title">The Operator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/f3a9ec7c-ece4-4533-a837-7e10fb31b6ba.jpg" alt="The Quarry">
+        <div class="title">The Quarry</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/e60fec9b-98e2-4d21-8245-d31203ce4c8c.jpg" alt="The Sims 4">
+        <div class="title">The Sims 4</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5593ccb5-a178-49c1-b91e-d653f947d55d.jpg" alt="The Sinking City: Necronomicon Edition">
+        <div class="title">The Sinking City: Necronomicon Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/b779d06f-a1e4-40e3-9d8c-17077809b382.jpg" alt="TheHunter: Call of the Wild">
+        <div class="title">TheHunter: Call of the Wild</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a1d249ec-fe6e-47a4-b05f-a13efde9ebd8.jpg" alt="This Is the President">
+        <div class="title">This Is the President</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/81fb5fdb-828f-437d-a238-59b23d8bc57a.jpg" alt="Tomb Raider 1+2+3">
+        <div class="title">Tomb Raider 1+2+3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fd94f488-a5ca-44ad-ad75-2525328bf99a.jpg" alt="Tomb Raider: Definitive Edition">
+        <div class="title">Tomb Raider: Definitive Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/16998fcd-577c-4567-9eea-5f7f806ba28f.jpg" alt="Tourist Bus Simulator">
+        <div class="title">Tourist Bus Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a3941315-bdae-4025-85f0-8937a7874a95.jpg" alt="Train Sim World 3">
+        <div class="title">Train Sim World 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/c434c114-7a2b-47c7-9606-884d1c4e5652.jpg" alt="Train Sim World 5: Special Edition">
+        <div class="title">Train Sim World 5: Special Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/2c3a9119-4ec2-44cc-9030-84aae620ebbb.jpg" alt="Tropico 6">
+        <div class="title">Tropico 6</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/02b309be-232e-4b06-8360-16b38fc33b76.jpg" alt="UBOAT">
+        <div class="title">UBOAT</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/47a16939-3976-4f91-87e8-f9e55c60d4fa.jpg" alt="Uncharted: Legacy of Thieves Collection">
+        <div class="title">Uncharted: Legacy of Thieves Collection</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/077d689e-c4d2-4961-a90f-17c278a1656a.jpg" alt="Until Dawn">
+        <div class="title">Until Dawn</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/7f4d2212-0855-4f1e-bfca-45f3d57e137b.jpg" alt="Used Cars Simulator">
+        <div class="title">Used Cars Simulator</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/3059c19e-a367-4ecd-9262-5a56c45540a6.jpg" alt="Vampire: The Masquerade - Swansong">
+        <div class="title">Vampire: The Masquerade - Swansong</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/4f358e28-fada-4ae6-b8e8-af875d9be510.jpg" alt="Vampyr">
+        <div class="title">Vampyr</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9db38c30-b371-401d-9420-588c208d5f6f.jpg" alt="Victoria 3">
+        <div class="title">Victoria 3</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1ec87eac-f70d-45aa-8a96-7b28dcbf4c63.jpg" alt="Warhammer 40,000: Space Marine II">
+        <div class="title">Warhammer 40,000: Space Marine II</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/fb1c6c8a-104b-4921-b2b4-f6a8734333e5.jpg" alt="Watch Dogs">
+        <div class="title">Watch Dogs</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/a8231856-9917-4da9-a2a7-a5160db30af3.jpg" alt="Watch Dogs 2">
+        <div class="title">Watch Dogs 2</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/9750fb79-8e52-48f3-bf51-2a15175a755e.jpg" alt="Watch Dogs: Legion">
+        <div class="title">Watch Dogs: Legion</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/31d45d74-03bb-4399-8540-dfa7c1061c6f.jpg" alt="Way of the Hunter: Elite Edition">
+        <div class="title">Way of the Hunter: Elite Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/8e6d315a-3f7d-40fa-b66c-c8c57d38968c.jpg" alt="Wild West Dynasty">
+        <div class="title">Wild West Dynasty</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/bbd3b900-362b-491d-8cf4-98332e348a2e.jpg" alt="WRC 10: Deluxe Edition">
+        <div class="title">WRC 10: Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/5b5c4792-d51d-461b-8044-3c0b1f36d4ef.jpg" alt="WRC Generations">
+        <div class="title">WRC Generations</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/764dd1ae-0a4d-4a7a-9220-f271151f65ab.jpg" alt="WWE 2K23: Deluxe Edition">
+        <div class="title">WWE 2K23: Deluxe Edition</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/1bf32654-0883-4f70-adc6-c3ef4557383e.jpg" alt="WWE 2K25">
+        <div class="title">WWE 2K25</div>
+        <div class="source">PC</div>
+    </div>
+    <div class="game-card">
+        <img src="images/d0edd3d4-e26d-429a-9537-fe97f1972265.jpg" alt="Yacht Mechanic Simulator">
+        <div class="title">Yacht Mechanic Simulator</div>
+        <div class="source">PC</div>
+    </div>
 </body>
 </html>
